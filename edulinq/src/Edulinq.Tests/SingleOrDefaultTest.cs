@@ -116,6 +116,7 @@ namespace Edulinq.Tests
         }
 
         [Test]
+        [Ignore("LINQ to Objects doesn't perform the early out here. https://connect.microsoft.com/VisualStudio/feedback/details/639955")]
         public void EarlyOutWithPredicate()
         {
             int[] source = { 1, 2, 0 };

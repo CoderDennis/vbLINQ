@@ -52,19 +52,10 @@
     <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="nunit.framework, Version=2.5.7.10213, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\NUnit\nunit.framework.dll</HintPath>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.0.12054\lib\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-  </ItemGroup>
-  <ItemGroup Condition="'$(Configuration)' == 'LinqBridge implementation'">
-    <Reference Include="LinqBridge">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\LinqBridge.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup Condition="'$(Configuration)' == 'Normal LINQ'">
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
@@ -127,17 +118,14 @@
     <Compile Include="WhereTest.cs" />
     <Compile Include="ZipTest.cs" />
   </ItemGroup>
-  <ItemGroup Condition="'$(Configuration)' == 'Edulinq implementation'">
-    <ProjectReference Include="..\Edulinq\Edulinq.csproj">
-      <Project>{DC9C855E-5021-48E1-B8EC-4C7ED7DDC54E}</Project>
-      <Name>Edulinq</Name>
-    </ProjectReference>
-  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Edulinq.TestSupport\Edulinq.TestSupport.csproj">
       <Project>{C552666B-5660-445A-AA21-CF807D03C83E}</Project>
       <Name>Edulinq.TestSupport</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

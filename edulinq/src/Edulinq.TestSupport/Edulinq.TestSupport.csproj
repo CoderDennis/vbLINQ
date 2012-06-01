@@ -46,17 +46,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="nunit.framework">
-      <HintPath>..\..\NUnit\nunit.framework.dll</HintPath>
+      <HintPath>..\packages\NUnit.2.6.0.12054\lib\nunit.framework.dll</HintPath>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
     <Reference Include="System" />
-  </ItemGroup>
-  <ItemGroup Condition="'$(Configuration)' == 'LinqBridge implementation'">
-    <Reference Include="LinqBridge">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\LinqBridge.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup Condition="'$(Configuration)' != 'LinqBridge implementation'">
     <Reference Include="System.Core" />
@@ -75,6 +67,9 @@
     <Compile Include="StringEx.cs" />
     <Compile Include="TestExtensions.cs" />
     <Compile Include="ThrowingEnumerable.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
